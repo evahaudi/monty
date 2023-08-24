@@ -50,13 +50,13 @@ void to_add(stack_t **doubly, unsigned int cline)
 	if (m < 2)
 	{
 		dprintf(2, "L%u: can't add, stack too short\n", cline);
-		free_vglo();
+		free_vg();
 		exit(EXIT_FAILURE);
 	}
 
 	aux = (*doubly)->next;
 	aux->n += (*doubly)->n;
-	_pop(doubly, cline);
+	to_pop(doubly, cline);
 }
 
 /**
@@ -92,11 +92,11 @@ void to_sub(stack_t **doubly, unsigned int cline)
 	if (m < 2)
 	{
 		dprintf(2, "L%u: can't sub, stack too short\n", cline);
-		free_vglo();
+		free_vg();
 		exit(EXIT_FAILURE);
 	}
 
 	aux = (*doubly)->next;
 	aux->n -= (*doubly)->n;
-	_pop(doubly, cline);
+	to_pop(doubly, cline);
 }

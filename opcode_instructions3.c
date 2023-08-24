@@ -20,20 +20,20 @@ void to_div(stack_t **doubly, unsigned int cline)
 	if (m < 2)
 	{
 		dprintf(2, "L%u: can't div, stack too short\n", cline);
-		free_vglo();
+		free_vg();
 		exit(EXIT_FAILURE);
 	}
 
 	if ((*doubly)->n == 0)
 	{
 		dprintf(2, "L%u: division by zero\n", cline);
-		free_vglo();
+		free_vg();
 		exit(EXIT_FAILURE);
 	}
 
 	aux = (*doubly)->next;
 	aux->n /= (*doubly)->n;
-	_pop(doubly, cline);
+	to_pop(doubly, cline);
 }
 
 /**
@@ -56,13 +56,13 @@ void _mul(stack_t **doubly, unsigned int cline)
 	if (m < 2)
 	{
 		dprintf(2, "L%u: can't mul, stack too short\n", cline);
-		free_vglo();
+		free_vg();
 		exit(EXIT_FAILURE);
 	}
 
 	aux = (*doubly)->next;
 	aux->n *= (*doubly)->n;
-	_pop(doubly, cline);
+	to_pop(doubly, cline);
 }
 
 /**
@@ -86,20 +86,20 @@ void to_mod(stack_t **doubly, unsigned int cline)
 	if (m < 2)
 	{
 		dprintf(2, "L%u: can't mod, stack too short\n", cline);
-		free_vglo();
+		free_vg();
 		exit(EXIT_FAILURE);
 	}
 
 	if ((*doubly)->n == 0)
 	{
 		dprintf(2, "L%u: division by zero\n", cline);
-		free_vglo();
+		free_vg();
 		exit(EXIT_FAILURE);
 	}
 
 	aux = (*doubly)->next;
 	aux->n %= (*doubly)->n;
-	_pop(doubly, cline);
+	to_pop(doubly, cline);
 }
 /**
  * _pu_char - print the char value of the first element
@@ -113,13 +113,13 @@ void _pu_char(stack_t **doubly, unsigned int cline)
 	if (doubly == NULL || *doubly == NULL)
 	{
 		dprintf(2, "L%u: can't pchar, stack empty\n", cline);
-		free_vglo();
+		free_vg();
 		exit(EXIT_FAILURE);
 	}
 	if ((*doubly)->n < 0 || (*doubly)->n >= 128)
 	{
 		dprintf(2, "L%u: can't pchar, value out of range\n", cline);
-		free_vglo();
+		free_vg();
 		exit(EXIT_FAILURE);
 	}
 	printf("%c\n", (*doubly)->n);

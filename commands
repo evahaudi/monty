@@ -5,34 +5,34 @@
  2001  git config --global user.name "evahaudi"
  2002  git log
  2003  grep -r "handle_dlist_head" .
- 2004  grep -r "add_dnodeint_end" .
- 2005  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/add_dnodeint_end/add-end_dnode/g' {} \;
- 2006  grep -r "add_dnodeint_end" .
- 2007  grep -r "add_dnodeint" .
- 2008  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/add_dnodeint/add-int_dnode/g' {} \;
- 2009  grep -r "add_dnodeint" .
- 2010  grep -r "get_opcodes" .
- 2011  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/get_opcodes/op_code-get/g' {} \;
- 2012  grep -r "free_vglo" .
- 2013  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/free_vglo/free-vg/g' {} \;
- 2014  grep -r "start_vglo" .
- 2015  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/start_vglo/start_vg/g' {} \;
- 2016  grep -r "check_input" .
- 2017  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/check_input/scan_input/g' {} \;
- 2018  grep -r "_calloc" .
- 2019  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/_calloc/c_alloc/g' {} \;
+ 2004  grep -r "add_int_dnode_end" .
+ 2005  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/add_int_dnode_end/add-end_dnode/g' {} \;
+ 2006  grep -r "add_int_dnode_end" .
+ 2007  grep -r "add_int_dnode" .
+ 2008  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/add_int_dnode/add-int_dnode/g' {} \;
+ 2009  grep -r "add_int_dnode" .
+ 2010  grep -r "op_code_get" .
+ 2011  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/op_code_get/op_code-get/g' {} \;
+ 2012  grep -r "free_vg" .
+ 2013  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/free_vg/free-vg/g' {} \;
+ 2014  grep -r "start_vg" .
+ 2015  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/start_vg/start_vg/g' {} \;
+ 2016  grep -r "scan_input" .
+ 2017  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/scan_input/scan_input/g' {} \;
+ 2018  grep -r "c_alloc" .
+ 2019  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/c_alloc/c_alloc/g' {} \;
  2020  grep -r "re_alloc" .
  2021  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/re_alloc/re_alloc/g' {} \;
- 2022  grep -r "to_push" .
- 2023  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/to_push/toto_push/g' {} \;
- 2024  grep -r "to_pall" .
- 2025  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/to_pall/toto_pall/g' {} \;
- 2026  grep -r "to_pint" .
- 2027  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/to_pint/toto_pint/g' {} \;
- 2028  grep -r "to_pop" .
- 2029  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/to_pop/toto_pop/g' {} \;
- 2030  grep -r "_swap" .
- 2031  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/_swap/to_swap/g' {} \;
+ 2022  grep -r "toto_push" .
+ 2023  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/toto_push/tototo_push/g' {} \;
+ 2024  grep -r "toto_pall" .
+ 2025  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/toto_pall/tototo_pall/g' {} \;
+ 2026  grep -r "toto_pint" .
+ 2027  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/toto_pint/tototo_pint/g' {} \;
+ 2028  grep -r "toto_pop" .
+ 2029  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/toto_pop/tototo_pop/g' {} \;
+ 2030  grep -r "to_swap" .
+ 2031  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/to_swap/toto_swap/g' {} \;
  2032  grep -r "to_queue" .
  2033  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/to_queue/toto_queue/g' {} \;
  2034  grep -r "to_stack" .
