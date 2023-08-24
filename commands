@@ -1,0 +1,70 @@
+ 1997  git clone https://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@github.com/evahaudi/monty.git
+ 1998  cd monty/
+ 1999  git log
+ 2000  git config --global user.email "evahaudi2354@gmail.com"
+ 2001  git config --global user.name "evahaudi"
+ 2002  git log
+ 2003  grep -r "handle_dlist_head" .
+ 2004  grep -r "add_dnodeint_end" .
+ 2005  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/add_dnodeint_end/add-end_dnode/g' {} \;
+ 2006  grep -r "add_dnodeint_end" .
+ 2007  grep -r "add_dnodeint" .
+ 2008  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/add_dnodeint/add-int_dnode/g' {} \;
+ 2009  grep -r "add_dnodeint" .
+ 2010  grep -r "get_opcodes" .
+ 2011  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/get_opcodes/op_code-get/g' {} \;
+ 2012  grep -r "free_vglo" .
+ 2013  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/free_vglo/free-vg/g' {} \;
+ 2014  grep -r "start_vglo" .
+ 2015  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/start_vglo/start_vg/g' {} \;
+ 2016  grep -r "check_input" .
+ 2017  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/check_input/scan_input/g' {} \;
+ 2018  grep -r "_calloc" .
+ 2019  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/_calloc/c_alloc/g' {} \;
+ 2020  grep -r "re_alloc" .
+ 2021  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/re_alloc/re_alloc/g' {} \;
+ 2022  grep -r "to_push" .
+ 2023  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/to_push/toto_push/g' {} \;
+ 2024  grep -r "to_pall" .
+ 2025  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/to_pall/toto_pall/g' {} \;
+ 2026  grep -r "to_pint" .
+ 2027  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/to_pint/toto_pint/g' {} \;
+ 2028  grep -r "to_pop" .
+ 2029  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/to_pop/toto_pop/g' {} \;
+ 2030  grep -r "_swap" .
+ 2031  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/_swap/to_swap/g' {} \;
+ 2032  grep -r "to_queue" .
+ 2033  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/to_queue/toto_queue/g' {} \;
+ 2034  grep -r "to_stack" .
+ 2035  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/to_stack/toto_stack/g' {} \;
+ 2036  grep -r "to_add" .
+ 2037  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/to_add/toto_add/g' {} \;
+ 2038  grep -r "toto_nop" .
+ 2039  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/toto_nop/tototo_nop/g' {} \;
+ 2040  grep -r "to_sub" .
+ 2041  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/to_sub/toto_sub/g' {} \;
+ 2042  grep -r "to_div" .
+ 2043  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/to_div/toto_div/g' {} \;
+ 2044  grep -r "to_mod" .
+ 2045  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/to_mod/toto_mod/g' {} \;
+ 2046  grep -r "_pu_char" .
+ 2047  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/_pu_char/_pu_char/g' {} \;
+ 2048  grep -r "_rotl" .
+ 2049  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/_rotl/this_is_rotl/g' {} \;
+ 2050  grep -r "_rotr" .
+ 2051  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/_rotr/this_is_rotr/g' {} \;
+ 2052  grep -r "_strtoky" .
+ 2053  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/_strtoky/_string_toky/g' {} \;
+ 2054  grep -r "_strcmp" .
+ 2055  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/_strcmp/_strcmp~/g' {} \;
+ 2056  betty *
+ 2057  git add .
+ 2058  git commit -m "debug"
+ 2059  git push
+ 2060  git log --oneline
+ 2061  git reset --hard db50d87
+ 2062  git push --force origin master
+ 2063  find . -maxdepth 1 -type f ! -name 'bf' -exec sed -i 's/_strcmp/_strcmp~/g' {} \;
+ 2064  git add .
+ 2065  history
+ 2066  history 70 > commands

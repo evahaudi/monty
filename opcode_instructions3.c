@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * _div - divides the second element by the top element of the stack
+ * to_div - divides the second element by the top element of the stack
  *
  * @doubly: head of the linked list
  * @cline: line number;
  * Return: no return
  */
-void _div(stack_t **doubly, unsigned int cline)
+void to_div(stack_t **doubly, unsigned int cline)
 {
 	int m = 0;
 	stack_t *aux = NULL;
@@ -66,14 +66,14 @@ void _mul(stack_t **doubly, unsigned int cline)
 }
 
 /**
- * _mod - computes the rest of the division of the second element
+ * to_mod - computes the rest of the division of the second element
  * by the top element of the stack
  *
  * @doubly: head of the linked list
  * @cline: line number;
  * Return: no return
  */
-void _mod(stack_t **doubly, unsigned int cline)
+void to_mod(stack_t **doubly, unsigned int cline)
 {
 	int m = 0;
 	stack_t *aux = NULL;
@@ -102,13 +102,13 @@ void _mod(stack_t **doubly, unsigned int cline)
 	_pop(doubly, cline);
 }
 /**
- * _pchar - print the char value of the first element
+ * _pu_char - print the char value of the first element
  *
  * @doubly: head of the linked list
  * @cline: line number;
  * Return: no return
  */
-void _pchar(stack_t **doubly, unsigned int cline)
+void _pu_char(stack_t **doubly, unsigned int cline)
 {
 	if (doubly == NULL || *doubly == NULL)
 	{

@@ -1,4 +1,3 @@
-# Monty[Licence: MIT](https://github.com/kwamboka1/monty/blob/master/LICENSE)
 
 `monty` is an interpreter of Monty ByteCodes files, which is a scripting language just like Python.
 
@@ -89,23 +88,3 @@ $
 | `rotl` | Rotates the stack to the top |
 | `rotr` | Rotates the stack to the bottom |
 
-Comments, indicated with `#`, are not executed by the interpreter.
-
-When a **nonextistent opcode** is passed, the interpreter prints an error message and stops:
-
-```bash
-$ cat errorfile.m
-push 1
-pint
-pcx
-$ ./monty errorfile.m
-1
-L3: unknown instruction pcx
-```
-
-### Return value
-When there is no errors, `monty` returns `0`. Otherwise, returns `1`
-
-## Authors
-* Mildred Makori: [Twitter](https://twitter.com/makori_mildred) - [GitHub](https://github.com/kwamboka1)
-* Lebogang Modise: [Twitter](https://twitter.com) - [GitHub](https://github.com/YourDevLebo)
