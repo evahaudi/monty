@@ -80,8 +80,6 @@ void to_mod(stack_t **doubly, unsigned int cline);
 void _pu_char(stack_t **doubly, unsigned int cline);
 void _pstr(stack_t **doubly, unsigned int cline);
 void _rotl(stack_t **doubly, unsigned int cline);
-void _rotr(stack_t **doubly, unsigned int cline);
-
 /*get function*/
 void (*op_code_get(char *opc))(stack_t **stack, unsigned int line_number);
 
