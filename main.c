@@ -3,34 +3,6 @@
 global_t vglo;
 
 /**
- * free_vg - frees the global variables
- *
- * Return: no return
- */
-void free_vg(void)
-{
-	free_dlistint(vglo.head);
-	free(vglo.buffer);
-	fclose(vglo.fd);
-}
-
-/**
- * start_vg - initializes the global variables
- *
- * @fd: file descriptor
- * Return: no return
- */
-void start_vg(FILE *fd)
-{
-	vglo.lifo = 1;
-	vglo.cont = 1;
-	vglo.arg = NULL;
-	vglo.head = NULL;
-	vglo.fd = fd;
-	vglo.buffer = NULL;
-}
-
-/**
  * scan_input - checks if the file exists and if the file can
  * be opened
  *
@@ -57,8 +29,33 @@ FILE *scan_input(int argc, char *argv[])
 	}
 
 	return (fd);
+}      
+/**
+ * start_vg - initializes the global variables
+ *
+ * @fd: file descriptor
+ * Return: no return
+ */
+void start_vg(FILE *fd)
+{
+	vglo.lifo = 1;
+	vglo.cont = 1;
+	vglo.arg = NULL;
+	vglo.head = NULL;
+	vglo.fd = fd;
+	vglo.buffer = NULL;
 }
-
+/**
+ * free_vg - frees the global variables
+ *
+ * Return: no return
+ */
+void free_vg(void)
+{
+	free_dlistint(vglo.head);
+	free(vglo.buffer);
+	fclose(vglo.fd);
+}
 /**
  * main - Entry point
  *
