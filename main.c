@@ -1,15 +1,44 @@
 #include "monty.h"
 
 global_t vglo;
+
 /**
- * check_input - checks if the file exists and if the file can
+ * free_vg - frees the global variables
+ *
+ * Return: no return
+ */
+void free_vg(void)
+{
+	free_dlistint(vglo.head);
+	free(vglo.buffer);
+	fclose(vglo.fd);
+}
+
+/**
+ * start_vg - initializes the global variables
+ *
+ * @fd: file descriptor
+ * Return: no return
+ */
+void start_vg(FILE *fd)
+{
+	vglo.lifo = 1;
+	vglo.cont = 1;
+	vglo.arg = NULL;
+	vglo.head = NULL;
+	vglo.fd = fd;
+	vglo.buffer = NULL;
+}
+
+/**
+ * scan_input - checks if the file exists and if the file can
  * be opened
  *
  * @argc: argument count
  * @argv: argument vector
  * Return: file struct
  */
-FILE *check_input(int argc, char *argv[])
+FILE *scan_input(int argc, char *argv[])
 {
 	FILE *fd;
 
@@ -30,35 +59,6 @@ FILE *check_input(int argc, char *argv[])
 	return (fd);
 }
 
-
-
-/**
- * start_vglo - initializes the global variables
- *
- * @fd: file descriptor
- * Return: no return
- */
-void start_vglo(FILE *fd)
-{
-	vglo.lifo = 1;
-	vglo.cont = 1;
-	vglo.arg = NULL;
-	vglo.head = NULL;
-	vglo.fd = fd;
-	vglo.buffer = NULL;
-}
-/**
- * free_vglo - frees the global variables
- *
- * Return: no return
- */
-void free_vglo(void)
-{
-	free_dlistint(vglo.head);
-	free(vglo.buffer);
-	fclose(vglo.fd);
-}
-
 /**
  * main - Entry point
  *
@@ -74,20 +74,20 @@ int main(int argc, char *argv[])
 	ssize_t nlines = 0;
 	char *lines[2] = {NULL, NULL};
 
-	fd = check_input(argc, argv);
-	start_vglo(fd);
+	fd = scan_input(argc, argv);
+	start_vg(fd);
 	nlines = getline(&vglo.buffer, &size, fd);
 	while (nlines != -1)
 	{
 		lines[0] = _strtoky(vglo.buffer, " \t\n");
 		if (lines[0] && lines[0][0] != '#')
 		{
-			f = get_opcodes(lines[0]);
+			f = op_code_get(lines[0]);
 			if (!f)
 			{
 				dprintf(2, "L%u: ", vglo.cont);
 				dprintf(2, "unknown instruction %s\n", lines[0]);
-				free_vglo();
+				free_vg();
 				exit(EXIT_FAILURE);
 			}
 			vglo.arg = _strtoky(NULL, " \t\n");
@@ -97,8 +97,7 @@ int main(int argc, char *argv[])
 		vglo.cont++;
 	}
 
-	free_vglo();
+	free_vg();
 
 	return (0);
 }
-
