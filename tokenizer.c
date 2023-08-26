@@ -1,11 +1,48 @@
 #include "monty.h"
+
 /**
- * c_alloc - concatenate tw strings specially
+ * _strtoky - function that cut a string into tokens depending of the delimit
+ * @s: string to cut in parts
+ * @d: delimiters
+ * Return: first partition
+ */
+char *_strtoky(char *s, char *d)
+{
+	static char *ultimo;
+	int i = 0, j = 0;
+
+	if (!s)
+		s = ultimo;
+	while (s[i] != '\0')
+	{
+		if (_sch(d, s[i]) == 0 && s[i + 1] == '\0')
+		{
+			ultimo = s + i + 1;
+			*ultimo = '\0';
+			s = s + j;
+			return (s);
+		}
+		else if (_sch(d, s[i]) == 0 && _sch(d, s[i + 1]) == 0)
+			i++;
+		else if (_sch(d, s[i]) == 0 && _sch(d, s[i + 1]) == 1)
+		{
+			ultimo = s + i + 1;
+			*ultimo = '\0';
+			ultimo++;
+			s = s + j;
+			return (s);
+		}
+		else if (_sch(d, s[i]) == 1)
+		{
+			j++;
+			i++;
+		}/**
+ * _calloc - concatenate tw strings specially
  * @nmemb: number of elements
  * @size: type of elements
  * Return: nothing
  */
-void *c_alloc(unsigned int nmemb, unsigned int size)
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *p = NULL;
 	unsigned int i;
@@ -26,13 +63,13 @@ void *c_alloc(unsigned int nmemb, unsigned int size)
 	return (p);
 }
 /**
- * re_alloc - change the size and copy the content
+ * _realloc - change the size and copy the content
  * @ptr: malloc pointer to reallocate
  * @old_size: old number of bytes
  * @new_size: new number of Bytes
  * Return: nothing
  */
-void *re_alloc(void *ptr, unsigned int old_size, unsigned int new_size)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *p = NULL;
 	unsigned int i;
@@ -71,3 +108,7 @@ void *re_alloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	return (p);
 }
+	}
+	return (NULL);
+}
+
