@@ -25,8 +25,6 @@ void (*op_code_get(char *opc))(stack_t **stack, unsigned int line_number)
 		{"mod", to_mod},
 		{"pchar", _pu_char},
 		{"pstr", _pstr},
-		
-
 		{NULL, NULL}
 	};
 	int i;
