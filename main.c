@@ -29,7 +29,7 @@ FILE *scan_input(int argc, char *argv[])
 	}
 
 	return (fd);
-}      
+}
 /**
  * start_vg - initializes the global variables
  *
