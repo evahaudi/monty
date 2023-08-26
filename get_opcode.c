@@ -1,30 +1,30 @@
 #include "monty.h"
 
 /**
- * op_code_get - selects the correct opcode to perform
+ * op_code_get - selects the correct opcode to performs
  *
  * @opc: opcode passed
  *
- * Return: pointer to the function that executes the opcode
+ * Return: pointer to the function that executes the opcodes
  */
 void (*op_code_get(char *opc))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t instruct[] = {
-		{"push", to_push},
 		{"pall", to_pall},
-		{"pint", to_pint},
-		{"pop", to_pop},
-		{"swap", to_swap},
-		{"queue", to_queue},
-		{"stack", to_stack},
-		{"add", to_add},
-		{"nop", to_nop},
-		{"sub", to_sub},
 		{"mul", _mul},
-		{"div", to_div},
+		{"queue", to_queue},
+		{"pint", to_pint},
+		{"swap", to_swap},
+		{"push", to_push},
 		{"mod", to_mod},
 		{"pchar", _pu_char},
+		{"stack", to_stack},
 		{"pstr", _pstr},
+		{"pop", to_pop},
+		{"nop", to_nop},
+		{"add", to_add},
+		{"div", to_div},
+		{"sub", to_sub},
 		{NULL, NULL}
 	};
 	int i;
